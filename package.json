@@ -2,9 +2,13 @@
   "name": "barrack-restaurant-mern",
   "version": "1.0.0",
   "description": "The Barrack Restaurant & Rooftop Lounge - MERN Stack Demo Application with Framer Motion",
+  "workspaces": [
+    "client",
+    "server"
+  ],
   "scripts": {
     "install:all": "npm --prefix server install && npm --prefix client install",
-    "build": "npm --prefix client install && npm --prefix client run build",
+    "build": "cd client && npm install && npm run build",
     "server": "npm --prefix server start",
     "client": "npm --prefix client run dev",
     "start": "npm run build && npm --prefix server start",
