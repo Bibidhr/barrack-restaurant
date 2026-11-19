@@ -6,24 +6,25 @@ import React from 'react';
  */
 
 // 1. Bottom of Hero transitioning into Vista Section (Warm Parchment #FBF6F0)
+// Completely shapes the bottom of the hero picture into an organic wave with no straight line.
 export function HeroBottomWave() {
   return (
     <div className="absolute -bottom-1 left-0 right-0 z-20 overflow-hidden leading-none pointer-events-none">
       <svg
-        className="w-full h-10 sm:h-14 md:h-18 lg:h-20 block"
-        viewBox="0 0 1440 64"
+        className="w-full h-16 sm:h-20 md:h-28 lg:h-32 block"
+        viewBox="0 0 1440 100"
         fill="none"
         preserveAspectRatio="none"
       >
         {/* Subtle warm cream undertone ribbon */}
         <path
-          d="M0,26 Q180,48 360,26 T720,26 T1080,26 T1440,26 L1440,64 L0,64 Z"
-          fill="#F5EBE0"
+          d="M0,28 Q180,54 360,28 T720,28 T1080,28 T1440,28 L1440,100 L0,100 Z"
+          fill="#F4EAD4"
           fillOpacity="0.6"
         />
-        {/* Main smooth wave matching Vista background */}
+        {/* Main solid wave matching Vista background */}
         <path
-          d="M0,32 Q180,56 360,32 T720,32 T1080,32 T1440,32 L1440,64 L0,64 Z"
+          d="M0,36 Q180,62 360,36 T720,36 T1080,36 T1440,36 L1440,100 L0,100 Z"
           fill="#FBF6F0"
         />
       </svg>
@@ -36,20 +37,20 @@ export function VistaToMenuWave() {
   return (
     <div className="w-full overflow-hidden leading-none -mb-1 pointer-events-none relative z-10">
       <svg
-        className="w-full h-10 sm:h-14 md:h-16 block"
-        viewBox="0 0 1440 64"
+        className="w-full h-12 sm:h-16 md:h-20 block"
+        viewBox="0 0 1440 80"
         fill="none"
         preserveAspectRatio="none"
       >
         {/* Soft cream accent wave */}
         <path
-          d="M0,24 Q180,46 360,24 T720,24 T1080,24 T1440,24 L1440,64 L0,64 Z"
+          d="M0,22 Q180,46 360,22 T720,22 T1080,22 T1440,22 L1440,80 L0,80 Z"
           fill="#F4EAD4"
           fillOpacity="0.5"
         />
         {/* Main wave matching Popular Menu background */}
         <path
-          d="M0,32 Q180,56 360,32 T720,32 T1080,32 T1440,32 L1440,64 L0,64 Z"
+          d="M0,30 Q180,56 360,30 T720,30 T1080,30 T1440,30 L1440,80 L0,80 Z"
           fill="#FAF7F2"
         />
       </svg>
@@ -62,20 +63,20 @@ export function MenuToLocationWave() {
   return (
     <div className="w-full overflow-hidden leading-none -mt-1 pointer-events-none relative z-10">
       <svg
-        className="w-full h-10 sm:h-14 md:h-16 block"
-        viewBox="0 0 1440 64"
+        className="w-full h-12 sm:h-16 md:h-20 block"
+        viewBox="0 0 1440 80"
         fill="none"
         preserveAspectRatio="none"
       >
         {/* Soft cream accent wave */}
         <path
-          d="M0,24 Q180,46 360,24 T720,24 T1080,24 T1440,24 L1440,64 L0,64 Z"
+          d="M0,22 Q180,46 360,22 T720,22 T1080,22 T1440,22 L1440,80 L0,80 Z"
           fill="#F4EAD4"
           fillOpacity="0.4"
         />
         {/* Main wave matching Location section background */}
         <path
-          d="M0,32 Q180,56 360,32 T720,32 T1080,32 T1440,32 L1440,64 L0,64 Z"
+          d="M0,30 Q180,56 360,30 T720,30 T1080,30 T1440,30 L1440,80 L0,80 Z"
           fill="#FBF6F0"
         />
       </svg>
@@ -83,39 +84,53 @@ export function MenuToLocationWave() {
   );
 }
 
-// 4. Location to CTA Wave Divider
-export function LocationToCTAWave() {
+// 4. Top of CTA Section: Shapes the top of the CTA picture into an organic wave
+export function CTATopWave() {
   return (
-    <div className="w-full overflow-hidden leading-none -mb-1 pointer-events-none relative z-10">
+    <div className="absolute -top-1 left-0 right-0 z-20 overflow-hidden leading-none pointer-events-none">
       <svg
-        className="w-full h-12 sm:h-16 md:h-20 block"
-        viewBox="0 0 1440 64"
+        className="w-full h-14 sm:h-18 md:h-24 block"
+        viewBox="0 0 1440 80"
         fill="none"
         preserveAspectRatio="none"
       >
-        {/* Smooth dark evening wave matching CTA */}
+        {/* Solid parchment wave cutting cleanly into the photo from above */}
         <path
-          d="M0,32 Q180,56 360,32 T720,32 T1080,32 T1440,32 L1440,64 L0,64 Z"
-          fill="#0E1A14"
+          d="M0,0 L1440,0 L1440,40 Q1260,18 1080,40 T720,40 T360,40 T0,40 Z"
+          fill="#FBF6F0"
+        />
+        {/* Soft cream accent ribbon along wave border */}
+        <path
+          d="M0,40 Q180,62 360,40 T720,40 T1080,40 T1440,40"
+          stroke="#F4EAD4"
+          strokeWidth="3"
+          strokeOpacity="0.7"
+          fill="none"
         />
       </svg>
     </div>
   );
 }
 
-// 5. CTA to Footer Wave Divider
-export function CTAToFooterWave() {
+// 5. Bottom of CTA Section: Shapes the bottom of the CTA picture into an organic wave
+export function CTABottomWave() {
   return (
-    <div className="w-full overflow-hidden leading-none -mb-1 pointer-events-none relative z-10 bg-[#0E1A14]">
+    <div className="absolute -bottom-1 left-0 right-0 z-20 overflow-hidden leading-none pointer-events-none">
       <svg
-        className="w-full h-10 sm:h-14 md:h-18 block"
-        viewBox="0 0 1440 64"
+        className="w-full h-14 sm:h-18 md:h-24 block"
+        viewBox="0 0 1440 80"
         fill="none"
         preserveAspectRatio="none"
       >
-        {/* Clean white wave matching Footer */}
+        {/* Soft cream accent wave ribbon */}
         <path
-          d="M0,32 Q180,56 360,32 T720,32 T1080,32 T1440,32 L1440,64 L0,64 Z"
+          d="M0,22 Q180,44 360,22 T720,22 T1080,22 T1440,22 L1440,80 L0,80 Z"
+          fill="#F4EAD4"
+          fillOpacity="0.5"
+        />
+        {/* Main solid wave filled with white #FFFFFF cutting into the photo from below */}
+        <path
+          d="M0,30 Q180,54 360,30 T720,30 T1080,30 T1440,30 L1440,80 L0,80 Z"
           fill="#FFFFFF"
         />
       </svg>

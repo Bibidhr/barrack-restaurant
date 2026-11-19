@@ -1,10 +1,15 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Phone, Calendar } from 'lucide-react';
+import { CTATopWave, CTABottomWave } from './WaveDividers';
 
 export default function CTASection({ onOpenReserve }) {
   return (
-    <section id="cta" className="relative py-28 overflow-hidden">
+    <section id="cta" className="relative py-32 sm:py-36 overflow-hidden">
+      
+      {/* Wave at Top of Picture: Replaces straight horizontal edge with organic curve */}
+      <CTATopWave />
+
       {/* Background Picture (CTA Picture) */}
       <div className="absolute inset-0 z-0">
         <picture>
@@ -56,6 +61,10 @@ export default function CTASection({ onOpenReserve }) {
         </div>
 
       </div>
+
+      {/* Wave at Bottom of Picture: Replaces straight horizontal edge with organic curve */}
+      <CTABottomWave />
+
     </section>
   );
 }

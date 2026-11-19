@@ -1,11 +1,10 @@
 import React from 'react';
 import { MapPin, Clock, Phone, Navigation } from 'lucide-react';
-import { LocationToCTAWave } from './WaveDividers';
 
 export default function LocationHours({ onOpenReserve }) {
   return (
-    <section id="location" className="pt-20 pb-0 bg-transparent relative overflow-hidden scroll-mt-24">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 mb-16">
+    <section id="location" className="py-20 bg-transparent scroll-mt-24">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
         
         <div className="bg-white rounded-3xl p-8 sm:p-12 border border-brand-green/10 shadow-[0_12px_40px_rgba(22,62,43,0.05)]">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
@@ -94,9 +93,6 @@ export default function LocationHours({ onOpenReserve }) {
         </div>
 
       </div>
-
-      {/* Organic Wave Transition into Dark Evening CTA */}
-      <LocationToCTAWave />
     </section>
   );
 }

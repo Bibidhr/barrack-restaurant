@@ -5,7 +5,7 @@ import { HeroBottomWave } from './WaveDividers';
 
 export default function Hero({ onOpenReserve, onOpenMenu }) {
   return (
-    <section className="relative min-h-[90vh] sm:min-h-screen flex items-center justify-center pt-24 pb-16 overflow-hidden">
+    <section className="relative min-h-[90vh] sm:min-h-screen flex items-center justify-center pt-24 pb-24 sm:pb-32 overflow-hidden">
       
       {/* Background Picture (Hero Picture) */}
       <div className="absolute inset-0 z-0 overflow-hidden">
