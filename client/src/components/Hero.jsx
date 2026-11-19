@@ -26,23 +26,6 @@ export default function Hero({ onOpenReserve, onOpenMenu }) {
       {/* Main Centered Content (No over-head or under-head UI indicator badges) */}
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center flex flex-col items-center">
         
-        {/* Brand Crest / Logo (Yala Cafe Inspired) */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9, y: 15 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          className="mb-4 sm:mb-6"
-        >
-          <img
-            src="/images/barrack_logo_light.png"
-            alt="The Barrack Restaurant & Rooftop Lounge"
-            className="h-16 sm:h-20 md:h-24 w-auto object-contain mx-auto drop-shadow-2xl hover:scale-105 transition-transform duration-300"
-            onError={(e) => {
-              e.currentTarget.src = "/images/barrack_logo_crop.png";
-            }}
-          />
-        </motion.div>
-
         {/* Grand Headline */}
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
