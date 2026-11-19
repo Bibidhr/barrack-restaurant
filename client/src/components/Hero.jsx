@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Calendar, Utensils } from 'lucide-react';
+import { HeroBottomWave } from './WaveDividers';
 
 export default function Hero({ onOpenReserve, onOpenMenu }) {
   return (
@@ -74,6 +75,9 @@ export default function Hero({ onOpenReserve, onOpenMenu }) {
         </motion.div>
 
       </div>
+
+      {/* Organic Wave Transition into Vista Section */}
+      <HeroBottomWave />
 
     </section>
   );

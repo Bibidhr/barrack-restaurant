@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowRight, Calendar, Utensils } from 'lucide-react';
+import { MenuToLocationWave } from './WaveDividers';
 
 export default function PopularMenuDiagonal({ onOpenReserve, onOpenMenu }) {
   const containerRef = useRef(null);
@@ -19,9 +20,9 @@ export default function PopularMenuDiagonal({ onOpenReserve, onOpenMenu }) {
     <section
       ref={containerRef}
       id="menu"
-      className="py-24 sm:py-32 bg-[#FAF7F2] border-y border-brand-green/10 relative overflow-hidden scroll-mt-24"
+      className="pt-20 sm:pt-28 pb-0 bg-[#FAF7F2] relative overflow-hidden scroll-mt-24"
     >
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-16 sm:mb-20">
         
         {/* Editorial Headline (Matches "Five days / on the high road") */}
         <div className="mb-16 sm:mb-24">
@@ -320,6 +321,9 @@ export default function PopularMenuDiagonal({ onOpenReserve, onOpenMenu }) {
         </div>
 
       </div>
+
+      {/* Organic Wave Border ending Popular Menu */}
+      <MenuToLocationWave />
     </section>
   );
 }

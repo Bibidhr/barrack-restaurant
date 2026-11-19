@@ -1,12 +1,16 @@
 import React from 'react';
 import { ArrowUp } from 'lucide-react';
+import { CTAToFooterWave } from './WaveDividers';
 
 export default function Footer({ onOpenReserve, onOpenMenu }) {
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
 
   return (
-    <footer className="bg-white text-slate-800 py-14 border-t border-slate-200 relative overflow-hidden">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center flex flex-col items-center">
+    <>
+      {/* Wave Transition from Dark CTA into White Footer */}
+      <CTAToFooterWave />
+      <footer className="bg-white text-slate-800 pt-8 pb-14 relative overflow-hidden">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center flex flex-col items-center">
         
         {/* 1. Logo in the Middle (Dark text + Red tent for white background) */}
         <a href="#" className="inline-block group mb-6 transition-transform duration-300 hover:scale-105">
@@ -69,5 +73,6 @@ export default function Footer({ onOpenReserve, onOpenMenu }) {
 
       </div>
     </footer>
+    </>
   );
 }

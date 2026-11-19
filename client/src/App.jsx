@@ -8,6 +8,7 @@ import CTASection from './components/CTASection';
 import Footer from './components/Footer';
 import ReservationModal from './components/ReservationModal';
 import FullMenuModal from './components/FullMenuModal';
+import { AmbientBackgroundWaves } from './components/WaveDividers';
 
 export default function App() {
   const [reserveModalOpen, setReserveModalOpen] = useState(false);
@@ -25,6 +26,9 @@ export default function App() {
 
   return (
     <div className="min-h-screen text-brand-pine relative selection:bg-brand-green selection:text-[#FAF5EF]">
+      {/* Ambient Flowing Background Waves */}
+      <AmbientBackgroundWaves />
+
       {/* Blending Navbar (Jimbu Thakali Inspired) */}
       <Navbar onOpenReserve={handleOpenReserve} onOpenMenu={handleOpenMenu} />
 

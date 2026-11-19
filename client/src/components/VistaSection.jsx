@@ -1,5 +1,6 @@
 import React from 'react';
 import { Sun, Flame, Compass, ArrowRight } from 'lucide-react';
+import { VistaToMenuWave } from './WaveDividers';
 
 const spaces = [
   {
@@ -24,8 +25,8 @@ const spaces = [
 
 export default function VistaSection({ onOpenReserve }) {
   return (
-    <section id="vista" className="py-24 bg-white/40 border-b border-brand-green/10 scroll-mt-24">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+    <section id="vista" className="pt-24 pb-0 bg-white/40 relative overflow-hidden scroll-mt-24">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 mb-16">
         
         {/* Editorial Section Header (No over-head indicator badge) */}
         <div className="max-w-2xl mb-14">
@@ -76,6 +77,9 @@ export default function VistaSection({ onOpenReserve }) {
         </div>
 
       </div>
+
+      {/* Organic Wave Border ending Vista Section */}
+      <VistaToMenuWave />
     </section>
   );
 }
