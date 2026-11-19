@@ -24,52 +24,58 @@ export default function Navbar({ onOpenReserve, onOpenMenu }) {
       <header
         className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
           scrolled
-            ? 'bg-[#0E1A14]/95 backdrop-blur-md py-2.5 sm:py-3 border-b border-white/10 shadow-2xl shadow-black/40'
+            ? 'bg-[#0E1A14]/95 backdrop-blur-md py-3 sm:py-3.5 border-b border-white/10 shadow-2xl shadow-black/40'
             : 'bg-transparent py-5 sm:py-6 border-b border-transparent shadow-none'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative flex items-center justify-between">
           
-          {/* Centered Masthead: Logo (transforms in middle ONLY after scroll) + Nav Links */}
-          <div className="flex flex-col items-center justify-center text-center">
-            
-            {/* 1. Centered Logo - ONLY appears and transforms in the MIDDLE after scroll */}
-            <div
-              className={`overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] flex items-center justify-center ${
-                scrolled
-                  ? 'max-h-14 opacity-100 translate-y-0 mb-1.5 sm:mb-2 pointer-events-auto'
-                  : 'max-h-0 opacity-0 -translate-y-3 mb-0 pointer-events-none'
-              }`}
-            >
-              <a href="#" className="inline-flex items-center justify-center group py-0.5">
-                <img
-                  src="/images/barrack_logo_light.png"
-                  alt="The Barrack Rooftop Lounge"
-                  className="h-7 sm:h-8 md:h-8.5 w-auto object-contain transition-transform duration-300 group-hover:scale-105 drop-shadow-md"
-                  onError={(e) => {
-                    e.currentTarget.src = "/images/barrack_logo_crop.png";
-                  }}
-                />
+          {/* 1. Left: Navigation Links */}
+          <nav className="hidden md:flex items-center gap-7 lg:gap-8">
+            {navLinks.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                className="text-xs font-mono font-medium uppercase tracking-wider text-slate-200 hover:text-red-400 transition-colors py-1 relative hover:after:w-full after:w-0 after:h-[1.5px] after:bg-red-500 after:absolute after:bottom-0 after:left-0 after:transition-all drop-shadow-sm"
+              >
+                {link.label}
               </a>
-            </div>
+            ))}
+          </nav>
 
-            {/* 2. Centered Navigation Links (Stacked directly below logo like Yala Cafe) */}
-            <nav className="hidden md:flex items-center justify-center gap-7 lg:gap-9">
-              {navLinks.map((link) => (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  className="text-xs font-mono font-medium uppercase tracking-wider text-slate-200 hover:text-red-400 transition-colors py-1 relative hover:after:w-full after:w-0 after:h-[1.5px] after:bg-red-500 after:absolute after:bottom-0 after:left-0 after:transition-all drop-shadow-sm"
-                >
-                  {link.label}
-                </a>
-              ))}
-            </nav>
-
+          {/* Mobile Left: Quick Call Link */}
+          <div className="md:hidden flex items-center">
+            <a
+              href="tel:+9779810786445"
+              className="p-2 text-red-400 hover:text-red-300 rounded-lg hover:bg-white/10 transition-colors flex items-center justify-center"
+              aria-label="Call Barrack Restaurant"
+            >
+              <Phone className="w-4 h-4" />
+            </a>
           </div>
 
-          {/* Right Action Controls: Pinned on the right side so Center is 100% mathematically centered */}
-          <div className="absolute right-4 sm:right-6 lg:right-8 top-1/2 -translate-y-1/2 flex items-center gap-3">
+          {/* 2. Middle: Logo - Appears smoothly centered ONLY on scroll */}
+          <div
+            className={`absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] flex items-center justify-center ${
+              scrolled
+                ? 'opacity-100 scale-100 pointer-events-auto'
+                : 'opacity-0 scale-90 pointer-events-none'
+            }`}
+          >
+            <a href="#" className="inline-flex items-center justify-center group py-0.5">
+              <img
+                src="/images/barrack_logo_light.png"
+                alt="The Barrack Rooftop Lounge"
+                className="h-7 sm:h-8 md:h-9 w-auto object-contain transition-transform duration-300 group-hover:scale-105 drop-shadow-md"
+                onError={(e) => {
+                  e.currentTarget.src = "/images/barrack_logo_crop.png";
+                }}
+              />
+            </a>
+          </div>
+
+          {/* 3. Right: Phone Number & Book Table CTA */}
+          <div className="flex items-center gap-3">
             <a
               href="tel:+9779810786445"
               className={`hidden xl:flex items-center gap-2 text-xs font-mono text-slate-200 hover:text-white px-3 py-1.5 rounded-lg border transition-all ${
@@ -102,20 +108,9 @@ export default function Navbar({ onOpenReserve, onOpenMenu }) {
             </button>
           </div>
 
-          {/* Mobile Left: Spacer or Quick Call on Mobile */}
-          <div className="md:hidden absolute left-4 top-1/2 -translate-y-1/2">
-            <a
-              href="tel:+9779810786445"
-              className="p-2 text-red-400 hover:text-red-300 rounded-lg hover:bg-white/10 transition-colors flex items-center justify-center"
-              aria-label="Call Barrack Restaurant"
-            >
-              <Phone className="w-4 h-4" />
-            </a>
-          </div>
-
         </div>
 
-        {/* Mobile Drawer Menu - positioned absolute top-full for zero-gap snapping */}
+        {/* Mobile Drawer Menu */}
         <AnimatePresence>
           {mobileMenuOpen && (
             <motion.div
